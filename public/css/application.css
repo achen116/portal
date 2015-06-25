@@ -44,6 +44,16 @@ input[type="submit"] {
   color: white;
 }
 
+/* facebook sessions styling */
+#fb-signin-button {
+  background-color: #4E69A2;
+}
+
+.facebook {
+  clear: both;
+  float: left;
+}
+
 /* body container styling */
 .container {
   width: 1000px;
@@ -146,4 +156,10 @@ input {
 /* sign in form styling */
 #form {
   float: left;
+}
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
 }
