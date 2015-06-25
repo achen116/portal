@@ -1,0 +1,36 @@
+<div class="edit-product-form">
+  <h1 id="edit-product-form"><%= "Edit #{product.title}" %></h1>
+
+  <% if @add_product_errors %>
+      <% @add_product_errors.each do |error,message| %>
+        <p><%= "#{error.capitalize} #{message.first}" %></p>
+      <% end %>
+    <% end %>
+
+  <form id="edit-product-form" action="<%= "/categories/#{category.id}/products/#{product.id}" %>" method="post">
+    <input type="hidden" name="_method" value="put">
+
+
+  	<label>Product Title:
+      <input type="text" name="title" value="<%= "#{product.title}" %>">
+    </label>
+    <br/>
+
+    <label>Product Description:
+      <input name="description" value="<%= "#{product.description}" %>">
+    </label>
+    <br/>
+
+    <label>Product Price:
+      <input type="text" name="price" value="<%= "#{product.price}" %>">
+    </label>
+    <br/>
+
+    <label>Product Category:
+      <input type="text" name="category" value="<%= "#{category.name}" %>">
+    </label>
+    <br/>
+
+  	<input type="submit" value="Update Product">
+  </form>
+</div>

@@ -1,0 +1,6 @@
+car_seats = Category.create!(name: "Car Seats")
+cribs = Category.create!(name: "Cribs")
+furniture = Category.create!(name: "Furniture")
+general = Category.create!(name: "General")
+strollers = Category.create!(name: "Strollers")
+toys = Category.create!(name: "Toys")

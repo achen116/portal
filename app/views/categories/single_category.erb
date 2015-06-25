@@ -1,0 +1,16 @@
+<div class="single-category">
+
+  <h1>
+    <%= "#{category.name}" %>
+    <%= erb :'/products/_add_product_button', locals: {category: category} %>
+  </h1>
+
+  <table class="display-products">
+    <tr>
+      <% products.each do |product| %>
+        <%= erb :'/categories/_single_category_products', locals: {product: product} %>
+      <% end %>
+    </tr>
+  </table>
+
+</div>

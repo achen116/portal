@@ -1,0 +1,32 @@
+<h1><%= "Welcome, #{current_user.first_name}!" %></h1>
+	 
+<h2>Account Info:</h2>
+<div class="user_account">
+	<p>
+		<b>Name: </b>
+		<%= "#{current_user.first_name} #{current_user.last_name}" %>
+	</p>
+	<p>
+		<b>Username: </b>
+		<%= "#{current_user.username}" %>
+	</p>
+	<p>
+		<b>Email: </b>
+		<%= "#{current_user.email}" %>
+	</p>
+</div>
+
+<hr>
+<hr>
+
+<h2>Your Products:</h2>
+
+<table>
+	<td>
+		<% current_user.products.each do |product| %>
+			<td id="product-rows">
+				<a id="product-links" href="<%= "/categories/#{product.category_id}/products/#{product.id}" %>"><%= product.title %></a>
+			</td>
+		<% end %>
+	</tr>
+</table>

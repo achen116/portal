@@ -1,0 +1,12 @@
+<% if current_user %>
+	<form id='signout-button' action='/signout' method='post'>
+	  <input type="hidden" name="_method" value="delete">
+	  <input type="submit" value="SIGN OUT">
+	</form>
+<% else %>
+	<form id='signin-button' action='/signin' method='get'>
+		<input type="submit" value="SIGN IN">
+	</form>
+<% end %>
+
+

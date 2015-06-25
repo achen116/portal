@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+
+<header>
+
+  <div class="main">
+    <!-- sign-in/sign-up bar -->
+    <div class="user_buttons">
+      <% if current_user %>
+        <%= erb :'/users/_user_account_button' %>
+        <%= erb :'/sessions/_signin_signout_button' %>
+      <% else %>
+        <%= erb :'/sessions/_signup_button' %>
+        <%= erb :'/sessions/_signin_signout_button' %>
+      <% end %>
+    </div>
+    <!-- <h1 class="header">portal</h1> -->
+    <div class="header">
+      <img src="https://drive.google.com/thumbnail?id=0By22zG_9S2SfWm1zYjdJQlJSd0k&authuser=0&v=1434876878660&sz=w1416-h596" alt="portal"/>
+    </div>
+
+    <!-- navigation bar -->
+    <div>
+      <ul class="nav-bar">
+        <a class="nav-bar" href="/">HOME</a>
+        <a class="nav-bar" href="/categories">CATEGORIES</a>
+        <a class="nav-bar" href="/products">PRODUCTS</a>
+      </ul>
+    </div>
+
+  </div>
+
+</header>
+
+<body>
+  <div class="container">
+  <%= yield %>
+  </div>
+</body>
+</html>

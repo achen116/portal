@@ -1,0 +1,19 @@
+<div class="single-product">
+  <h1><%= "#{product.title}" %></h1>
+
+  <h3>Description: </h3>
+  <p><%= "#{product.description}" %></p>
+
+  <h3>Price: </h3>
+  <p><%= "$#{product.price}" %></p>
+
+  <h3>Category: </h3>
+  <p><%= "#{category.name}" %></p>
+
+  <a href="mailto: <%= "#{@contact_email}" %>">Contact Seller</a>
+
+  <% if current_user && (current_user.id == product.user_id) %>
+    <%= erb :'/products/_delete_product_button', locals: {product: product, category: category} %>
+    <%= erb :'/products/_edit_product_button', locals: {product: product, category: category} %>
+  <% end %>
+</div>

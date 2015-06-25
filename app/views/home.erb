@@ -1,0 +1,13 @@
+<%= erb :'/categories/all_categories' %>
+
+<div class="products">
+  <h1>Products</h1>
+
+  <table class="display-products">
+    <tr>
+		  <% @products.each do |product| %>
+        <%= erb :'/categories/_single_category_products', locals: {product: product} %>
+		  <% end %>
+    </tr>
+  </table>
+</div>

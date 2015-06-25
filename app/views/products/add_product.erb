@@ -1,0 +1,34 @@
+<div class="new-product-form">
+  <h1 id="create-product-form">Add New Product</h1>
+
+  <% if @edit_product_errors %>
+    <% @edit_product_errors.each do |error, message| %>
+      <p><%= "#{error.capitalize} #{message.first}" %></p>
+    <% end %>
+  <% end %>
+
+  <form id="create-product-form" action='/categories/<%= category.id %>/products' method='post'>
+
+  	<label>Product Title:
+      <input type="text" name="title" placeholder="Add Product Title" value="">
+    </label>
+    <br/>
+
+    <label>Product Description:
+      <input name="description" placeholder="Add Product Description" value="">
+    </label>
+    <br/>
+
+    <label>Product Price:
+      <input type="text" name="price" placeholder="Add Product Price" value="">
+    </label>
+    <br/>
+
+    <label>Product Category:
+      <input type="text" name="category" value="<%= "#{category.name}" %>">
+    </label>
+    <br/>
+
+  	<input type="submit" value="Create Product">
+  </form>
+</div>

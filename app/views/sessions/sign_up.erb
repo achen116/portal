@@ -1,0 +1,48 @@
+<div class="sign-up-form">
+  <h1>Sign Up!</h1>
+
+  <% if @password_error %>
+  	<p><%= @password_error %></p>
+  <% end %>
+
+  <% if @sign_up_errors %>
+  	<% @sign_up_errors.each do |error,message| %>
+  		<p><%= "#{error.capitalize} #{message.first}" %></p>
+  	<% end %>
+  <% end %>
+
+  <form id="form" action='/signup' method='post'>
+  	<label>First Name
+  	  <input type="text" name="first_name" placeholder="First Name">
+    </label>
+    <br/>
+
+    <label>Last Name
+  	  <input type="text" name="last_name" placeholder="Last Name">
+    </label>
+    <br/>
+
+    <label>Username
+  	  <input type="text" name="username" placeholder="Username">
+    </label>
+    <br/>
+
+    <label>Email
+  	  <input type="text" name="email" placeholder="Email">
+    </label>
+    <br/>
+
+    <label>Password
+  	  <input type="password" name="password" placeholder="Minimum 6 Characters">
+    </label>
+    <br/>
+
+    <label>Confirm Password
+  	  <input type="password" name="confirm_password" placeholder="Re-type Password">
+    </label>
+    <br/>
+
+    <input type="submit" value="Sign Up">
+
+  </form>
+</div>

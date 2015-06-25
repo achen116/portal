@@ -1,0 +1,149 @@
+/* main header styling */
+.main {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin: auto;
+}
+
+.header {
+  padding-top: 20px;
+  font-family: 'Pacifico', cursive;
+  font-size: 75px;
+  text-align: center;
+}
+
+/* nav bar styling */
+.nav-bar {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 0px;
+  background: black;
+}
+
+a.nav-bar {
+  color: white;
+  text-decoration: none;
+}
+
+a.nav-bar:hover {
+  color: #79CCA2;
+}
+
+/* sessions styling */
+.user_buttons {
+  margin-top: 10px;
+  padding: 0px 20px 20px 20px;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #BE1E2D;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: white;
+}
+
+/* body container styling */
+.container {
+  width: 1000px;
+  margin: 0px auto;
+  padding: 0px 20px 20px 20px;
+  font-family: 'Archivo Narrow', sans-serif;;
+}
+
+/* search button styling */
+form {
+	float: right;
+	margin-right: 5px;
+}
+
+/* categories styling */
+.categories {
+  display: inline-block;
+  margin: auto;
+  padding-right: 25px;
+  border-right: 2px dotted black;
+}
+
+.single-category {
+  display: inline-table;
+  margin-left: 25px;
+}
+
+#category-row {
+  border: 1px solid black;
+}
+
+a#category-links {
+  text-decoration: none;
+  color: black;
+}
+
+a#category-links:hover {
+  color: #FFC91D;
+
+}
+
+/* products styling */
+td {
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+table.display-products {
+  width: 700px;
+}
+
+table.all-products {
+  width: 1000px;
+}
+
+.products {
+  display: inline-table;
+  margin-left: 25px;
+}
+
+.product-rows {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  background-color: #E2E2E2;
+  height: 100px;
+  width: 100px;
+}
+
+a#product-links {
+  text-decoration: none;
+  color: black;
+}
+
+a#product-links:hover {
+  color: #BE1E2D;
+
+}
+
+.single-product {
+  margin: 0px 175px 0px 175px;
+}
+
+/* form styling */
+input {
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#create-product-form {
+	float: left;
+  margin: 25px 175px 0px 175px;
+}
+
+#edit-product-form {
+  float: left;
+  margin: 25px 175px 0px 175px;
+}
+
+/* sign in form styling */
+#form {
+  float: left;
+}
