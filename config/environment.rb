@@ -22,6 +22,13 @@ require 'erb'
 
 require 'bcrypt'
 
+require 'awesome_print'
+
+require 'httparty'
+
+require 'dotenv'
+Dotenv.load
+
 require 'pry' if development? || test?
 
 # Some helper constants for path-centric logic
