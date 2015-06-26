@@ -23,10 +23,8 @@ module Facebook
   end
 
   def user_profile(access_token)
-    p "/" * 100
-    p profile = HTTParty.get("https://graph.facebook.com/v2.3/me?access_token=#{access_token}")
-    p "/" * 100
-    p profile.parsed_response
+    profile = HTTParty.get("https://graph.facebook.com/v2.3/me?access_token=#{access_token}")
+    profile.parsed_response
   end
 
   private
@@ -65,7 +63,6 @@ module Facebook
 
   def access_token_params(authorization_code)
     {
-      # grant_type: "authorization_code",
       client_id: self.key,
       redirect_uri: self.redirect_uri,
       client_secret: self.secret,
