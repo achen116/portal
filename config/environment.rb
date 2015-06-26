@@ -54,3 +54,5 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+Facebook.setup(key: ENV['FB_APP_ID'], secret: ENV['FB_APP_SECRET'], redirect_uri: 'http://localhost:9393/oauth')
