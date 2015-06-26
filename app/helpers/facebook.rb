@@ -14,14 +14,19 @@ module Facebook
   end
 
   def get_access_token(authorization_code)
-    params = uri_encode(access_token_params(authorization_code))
+    p "&" * 100
+    p params = uri_encode(access_token_params(authorization_code))
+    p "&" * 100
+    
     response = HTTParty.get("#{oauth_base_url}access_token?#{params}")
     response.parsed_response["access_token"]
   end
 
   def user_profile(access_token)
-    profile = HTTParty.get("#{api_base_url}debug_token?=#{access_token}")
-    profile.parsed_response[]
+    p "/" * 100
+    p profile = HTTParty.get("#{api_base_url}/debug_token?input_token=#{state}=#{access_token}/me?fields=first_name")
+    p profile.parsed_response["me"]
+    p "/" * 100
   end
 
   private

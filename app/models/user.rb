@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
     self.encrypted_pw = @password
   end
 
+  def self.create_from_facebook(access_token)
+    profile = Facebook.user_profile(access_token)
+    first_name = "#{profile["first_name"]}"
+    last_name = "#{profile["last_name"]}"
+    self.create(facebook_token: access_token, first_name: first_name, last_name: last_name)
+  end
 end
