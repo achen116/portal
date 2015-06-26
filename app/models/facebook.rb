@@ -28,9 +28,6 @@ module Facebook
   end
 
   def authorization_params
-    p "^" * 100
-    p self.redirect_uri
-
     {
       client_id: self.key,
       redirect_uri: self.redirect_uri,
@@ -46,7 +43,6 @@ module Facebook
   def uri_encode(params)
 
     params.reduce("") do |uri, (k,v)|
-    p "8" * 100
       uri << "&#{k}=#{v}"
       uri
     end
