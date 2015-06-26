@@ -4,5 +4,6 @@ get '/facebook_login' do
 end
 
 get '/oauth' do
+  access_token = Facebook.get_access_token(params["code"])
 
 end

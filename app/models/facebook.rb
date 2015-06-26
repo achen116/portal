@@ -13,15 +13,25 @@ module Facebook
     "#{oauth_base_url}#{auth_request_params}"
   end
 
+  def get_access_token(authorization_code)
+    params = uri_encode(access_token_params(authorization_code))
+    response = HTTParty.get("#{oauth_base_url}/accessToken?#{params}")
+    p "*" * 100
+    p params
+    p "*" * 100
+    p response
+    p response.parsed_response["access_token"]
+  end
+
   private
 
   def oauth_base_url
     "https://www.facebook.com/dialog/oauth?"
   end
 
-  def api_base_url
+  # def api_base_url
 
-  end
+  # end
 
   def auth_request_params
     "/#{uri_encode(authorization_params)}"
@@ -41,13 +51,19 @@ module Facebook
   end
 
   def uri_encode(params)
-
     params.reduce("") do |uri, (k,v)|
       uri << "&#{k}=#{v}"
       uri
     end
-
   end
 
+  def access_token_params(authorization_code)
+    {
+      grant_type: "authorization_code",
+      code: authorization_code,
+      client_id: self.key,
+      client_secret: self.secret,
+    }
+  end
 
 end
