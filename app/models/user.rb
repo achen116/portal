@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
     first_name = profile["first_name"]
     last_name = profile["last_name"]
 
-    self.create(facebook_token: access_token, first_name: first_name, last_name: last_name)
+    user = User.where(first_name: first_name, last_name: last_name).first()
+
+    if !user
+      self.create(facebook_token: access_token, first_name: first_name, last_name: last_name)
+    else
+      user
+    end
   end
 end
