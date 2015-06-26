@@ -18,19 +18,21 @@ module Facebook
     p params = uri_encode(access_token_params(authorization_code))
     p "& " * 50
     
+    response = HTTParty.get("#{api_base_url}access_token?#{params}") #not returning parsed response as hash :(
     p "- - " * 50
-    p response = HTTParty.get("#{api_base_url}access_token?#{params}")
+    p response
     p "- - " * 50
-    p response.parsed_response["access_token"]
+    # p response.parsed_response
+    p Rack::Utils.parse_nested_query(response.parsed_response)["access_token"]
     p "- - " * 50
-    
+
   end
 
   def user_profile(access_token)
     # p "/" * 100
-    profile = HTTParty.get("#{api_base_url}/debug_token?input_token=#{state}=#{access_token}")
+    # profile = HTTParty.get("#{api_base_url}debug_token?input_token=#{state}=#{access_token}")
     # p "-- " * 100
-    profile.parsed_response["debug_token"]
+    # profile.parsed_response["debug_token"]
     # p "/" * 100
   end
 
@@ -71,9 +73,6 @@ module Facebook
   def access_token_params(authorization_code)
     {
       # grant_type: "authorization_code",
-      # code: authorization_code,
-      # client_id: self.key,
-      # client_secret: self.secret
       client_id: self.key,
       redirect_uri: self.redirect_uri,
       client_secret: self.secret,
