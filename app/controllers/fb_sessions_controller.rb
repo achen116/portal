@@ -1,8 +1,8 @@
 # facebook sign in ====================================================
 get '/facebook_login' do
-  #redirect to facebook authorization url
+  redirect Facebook.authorization_url
 end
 
-get 'oauth' do
+get '/oauth' do
 
 end
