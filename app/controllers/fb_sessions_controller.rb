@@ -8,5 +8,6 @@ get '/oauth' do
   p "*" * 100
   p user = User.create_from_facebook(access_token)
   p "*" * 100
+  # session[:user_id] = user.id
   redirect "/"
 end
