@@ -16,4 +16,7 @@
     <%= erb :'/products/_delete_product_button', locals: {product: product, category: category} %>
     <%= erb :'/products/_edit_product_button', locals: {product: product, category: category} %>
   <% end %>
+
+  <br><br>
+  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true" href="#{product.id}"></div>
 </div>
