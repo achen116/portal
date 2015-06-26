@@ -24,7 +24,7 @@
 <table>
 	<td>
 		<% current_user.products.each do |product| %>
-			<td id="product-rows">
+			<td id="product-rows" class="product-rows">
 				<a id="product-links" href="<%= "/categories/#{product.category_id}/products/#{product.id}" %>"><%= product.title %></a>
 			</td>
 		<% end %>

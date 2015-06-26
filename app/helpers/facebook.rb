@@ -16,14 +16,14 @@ module Facebook
   def get_access_token(authorization_code)
     params = uri_encode(access_token_params(authorization_code))
     
-    response = HTTParty.get("#{api_base_url}access_token?#{params}") #not returning parsed response as hash :(
+    response = HTTParty.get("#{oauth_api_base_url}access_token?#{params}") #not returning parsed response as hash :(
     access_token = Rack::Utils.parse_nested_query(response.parsed_response)["access_token"]
 
     return access_token
   end
 
   def user_profile(access_token)
-    profile = HTTParty.get("https://graph.facebook.com/v2.3/me?access_token=#{access_token}")
+    profile = HTTParty.get("#{api_base_url}me?access_token=#{access_token}")
     profile.parsed_response
   end
 
@@ -33,8 +33,12 @@ module Facebook
     "https://www.facebook.com/dialog/oauth?/"
   end
 
-  def api_base_url
+  def oauth_api_base_url
     "https://graph.facebook.com/oauth/"
+  end
+
+  def api_base_url
+    "https://graph.facebook.com/v2.3/"
   end
 
   def auth_request_params
