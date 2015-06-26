@@ -14,19 +14,24 @@ module Facebook
   end
 
   def get_access_token(authorization_code)
-    p "&" * 100
+    p "& " * 50
     p params = uri_encode(access_token_params(authorization_code))
-    p "&" * 100
+    p "& " * 50
     
-    response = HTTParty.get("#{oauth_base_url}access_token?#{params}")
-    response.parsed_response["access_token"]
+    p "- - " * 50
+    p response = HTTParty.get("#{api_base_url}access_token?#{params}")
+    p "- - " * 50
+    p response.parsed_response["access_token"]
+    p "- - " * 50
+    
   end
 
   def user_profile(access_token)
-    p "/" * 100
-    p profile = HTTParty.get("#{api_base_url}/debug_token?input_token=#{state}=#{access_token}/me?fields=first_name")
-    p profile.parsed_response["me"]
-    p "/" * 100
+    # p "/" * 100
+    profile = HTTParty.get("#{api_base_url}/debug_token?input_token=#{state}=#{access_token}")
+    # p "-- " * 100
+    profile.parsed_response["debug_token"]
+    # p "/" * 100
   end
 
   private
@@ -36,7 +41,7 @@ module Facebook
   end
 
   def api_base_url
-    "https://graph.facebook.com/v2.3/"
+    "https://graph.facebook.com/oauth/"
   end
 
   def auth_request_params
@@ -65,10 +70,14 @@ module Facebook
 
   def access_token_params(authorization_code)
     {
-      grant_type: "authorization_code",
-      code: authorization_code,
+      # grant_type: "authorization_code",
+      # code: authorization_code,
+      # client_id: self.key,
+      # client_secret: self.secret
       client_id: self.key,
-      client_secret: self.secret
+      redirect_uri: self.redirect_uri,
+      client_secret: self.secret,
+      code: authorization_code,
     }
   end
 
