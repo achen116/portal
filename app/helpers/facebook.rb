@@ -19,6 +19,11 @@ module Facebook
     response.parsed_response["access_token"]
   end
 
+  def user_profile(access_token)
+    profile = HTTParty.get("#{api_base_url}debug_token?=#{access_token}")
+    profile.parsed_response[]
+  end
+
   private
 
   def oauth_base_url
@@ -58,7 +63,7 @@ module Facebook
       grant_type: "authorization_code",
       code: authorization_code,
       client_id: self.key,
-      client_secret: self.secret,
+      client_secret: self.secret
     }
   end
 
