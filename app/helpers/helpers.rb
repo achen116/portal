@@ -12,4 +12,8 @@ helpers do
 	  @product = Product.where(id: params[:id], category_id: params[:category_id]).first
 	end
 
+  def img(name)
+    "<img src='images/#{name}' alt='#{name}' />"
+  end
+
 end
