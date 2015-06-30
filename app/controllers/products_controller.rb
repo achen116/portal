@@ -70,10 +70,10 @@ end
 # delete specific product ===============================================
 
 delete '/categories/:category_id/products/:id' do
-  @category = Category.find(params[:category_id])
-  @product = Product.where(id: params[:id], category_id: params[:category_id]).first
+  category = Category.find(params[:category_id])
+  product = Product.where(id: params[:id], category_id: params[:category_id]).first
 
-  @product.destroy
+  product.destroy
 
   redirect "/account/#{current_user.id}"
 end
