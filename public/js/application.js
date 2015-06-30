@@ -8,7 +8,7 @@
 	  addProductButtonListener();
 	  editProductButtonListener();
 	  updateProductListener();
-	  deleteProductButtonListener();
+	  // deleteProductButtonListener();
 
 	  singleCategoryListener();
 	});

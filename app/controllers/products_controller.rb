@@ -51,9 +51,6 @@ get '/categories/:category_id/products/:id/edit' do
 end
 
 put '/categories/:category_id/products/:id' do
-  p "*" * 100
-  p params
-  p "*" * 100
   update_product = Product.where(id: params[:id], category_id: params[:category_id]).first
   update_product.attributes = { title:       params[:title],
                                 description: params[:description],
@@ -73,10 +70,11 @@ end
 # delete specific product ===============================================
 
 delete '/categories/:category_id/products/:id' do
-  category = Category.find(params[:category_id])
-  products = Product.where(category_id: params[:id])
+  @category = Category.find(params[:category_id])
+  @product = Product.where(id: params[:id], category_id: params[:category_id]).first
 
-  Product.destroy(params[:id])
+  @product.destroy
 
-  return { category_id: params[:category_id], product_id: params[:id] }.to_json
+  redirect "/account/#{current_user.id}"
+  # return { category_id: params[:category_id], product_id: params[:id] }.to_json
 end
