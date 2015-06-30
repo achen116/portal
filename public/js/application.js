@@ -28,6 +28,7 @@
 			request.done(function(response) {
 				$('.categories').hide();
 				$('.products').hide();
+				$('.single-product').hide();
 				$('#signin-button').hide();
 				$('#signup-button').show();
 				$('.sign-up-form').hide();
