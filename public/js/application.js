@@ -8,7 +8,6 @@
 	  addProductButtonListener();
 	  editProductButtonListener();
 	  updateProductListener();
-	  // deleteProductButtonListener();
 
 	  singleCategoryListener();
 	});
@@ -135,32 +134,6 @@
 			request.done(function(response) {
 				$('.edit-product-form').remove();
 				$('.container').append(response);
-			})
-
-			request.fail(function(response) {
-				console.log('FAIL', response)
-			})
-
-		})
-	}
-
-	var deleteProductButtonListener = function() {
-		$('.container').on('click', '#delete-product-button', function(event) {
-			event.preventDefault();
-
-			var route = $('#delete-product-button').attr('action');
-			var method = $('#delete-product-button').children().first().val()
-
-
-			var request = $.ajax({
-				url: route,
-				type: method,
-				dataType: 'json'
-			})
-
-			request.done(function(response) {
-				$('td').remove('#' + response.product_id);
-				location.assign('/categories/' + response.category_id);
 			})
 
 			request.fail(function(response) {

@@ -76,5 +76,4 @@ delete '/categories/:category_id/products/:id' do
   @product.destroy
 
   redirect "/account/#{current_user.id}"
-  # return { category_id: params[:category_id], product_id: params[:id] }.to_json
 end
