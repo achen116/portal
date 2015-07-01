@@ -1,11 +1,13 @@
+<div class="errors-block">
+  <% if @edit_product_errors %>
+    <% @edit_product_errors.each do |error| %>
+      <p class="error"><%= error %></p>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="edit-product-form">
   <h1 id="edit-product-form"><%= "Edit #{product.title}" %></h1>
-
-  <% if @edit_product_errors %>
-      <% @edit_product_errors.each do |error| %>
-        <p class="errors"><%= error %></p>
-      <% end %>
-    <% end %>
 
   <form id="edit-product-form" action="<%= "/categories/#{category.id}/products/#{product.id}" %>" method="post">
     <input type="hidden" name="_method" value="put">

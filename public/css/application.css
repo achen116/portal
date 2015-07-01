@@ -165,8 +165,14 @@ input {
 }
 
 /* errors styling */
-.errors {
-  font-family: 'Archivo Narrow', sans-serif;
-  background-color: gray;
-  color: red;
+.errors-block {
+  margin-top: 25px;
+}
+
+.error {
+  width: 400px;
+  margin: 5px 175px 0px 175px;
+  padding: 5px 0px 5px 10px;
+  border-radius: 5px;
+  background-color: #EFEFEF;
 }
