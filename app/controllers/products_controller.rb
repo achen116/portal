@@ -19,17 +19,17 @@ get '/categories/:category_id/products/new' do
 end
 
 post '/categories/:category_id/products' do
-  new_product = Product.new( title:       params[:title],
+  @new_product = Product.new( title:       params[:title],
                              description: params[:description],
                              price:       params[:price],
                              user_id:     current_user.id,
                              category_id: Category.where(name: params[:category]).first.id
                             )
 
-  if new_product.save
-    redirect "categories/#{new_product.category_id}/products/#{new_product.id}"
+  if @new_product.save
+    redirect "categories/#{@new_product.category_id}/products/#{@new_product.id}"
   else
-    @add_product_errors = new_product.errors.full_messages
+    @add_product_errors = @new_product.errors.full_messages
     erb :'/products/add_product'
   end
 end
