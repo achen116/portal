@@ -40,24 +40,13 @@
     </div>
 
     <!-- navigation bar -->
-    <nav>
-      <ul>
-        <li>
-          <a href="/">HOME</a>
-        </li>
-        <li>
-          <a href="/products">PRODUCTS</a>
-        </li>
-        <li>
-          <a href="/categories">CATEGORIES</a>
-          <ul>
-            <% all_categories.each do |category| %>
-              <li><a href="/categories/<%= category.id %>"><%= category.name %></li>
-            <% end %>
-          </ul>
-        </li>
+    <div>
+      <ul class="nav-bar">
+        <a class="nav-bar" href="/">HOME</a>
+        <a class="nav-bar" href="/categories">CATEGORIES</a>
+        <a class="nav-bar" href="/products">PRODUCTS</a>
       </ul>
-    </nav>
+    </div>
 
   </div>
 

@@ -12,63 +12,7 @@
 }
 
 /* nav bar styling */
-nav ul {
-  background: black;
-  list-style: none;
-  position: relative;
-}
-
-nav ul:after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
-nav ul li {
-  float: left;
-}
-
-nav ul li a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  display: block;
-  padding: 25px 25px 0px 0px;
-}
-
-/*nav ul li:hover a {
-  color: #79CCA2;
-}*/
-
-nav ul ul {
-  display: none;
-  padding: 0px;
-  position: absolute;
-  top: 100%;
-}
-
-nav ul li:hover > ul {
-  display: block;
-}
-
-nav ul ul li {
-  float: none;
-  position: relative;
-  background-color: white;
-}
-
-nav ul ul li a {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  padding: 15px 40px;
-}
-
-nav ul ul li a:hover {
-  color: #FFC91D;
-}
-
-/*.nav-bar {
+.nav-bar {
   font-size: 20px;
   text-align: center;
   padding: 10px;
@@ -94,7 +38,7 @@ a.cat-dropdown {
 
 a.cat-dropdown:hover {
   color: #FFC91D;
-}*/
+}
 
 /* sessions styling */
 .user_buttons {
