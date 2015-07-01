@@ -30,7 +30,7 @@ post '/categories/:category_id/products' do
     redirect "categories/#{new_product.category_id}/products/#{new_product.id}"
   else
     @add_product_errors = new_product.errors.full_messages
-    erb :'/products/add_product', layout: false
+    erb :'/products/add_product'
   end
 end
 

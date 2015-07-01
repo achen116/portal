@@ -1,11 +1,14 @@
+<div class="errors-block">
+  <% if @add_product_errors %>
+    <% @add_product_errors.each do |error| %>
+      <p class="error"><%= error %></p>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="new-product-form">
   <h1 id="create-product-form">Add New Product</h1>
 
-  <% if @add_product_errors %>
-    <% @add_product_errors.each do |error| %>
-      <p class="errors"><%= error %></p>
-    <% end %>
-  <% end %>
 
   <form id="create-product-form" action='/categories/<%= category.id %>/products' method='post'>
 
