@@ -10,6 +10,8 @@ end
 # search for a product or category ======================================
 
 post '/search' do
+  p params
+
   find_product = Product.where(title: params[:search]).first
   find_category = Category.where(name: params[:search]).first
 
