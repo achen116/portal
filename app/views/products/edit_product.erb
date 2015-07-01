@@ -1,9 +1,9 @@
 <div class="edit-product-form">
   <h1 id="edit-product-form"><%= "Edit #{product.title}" %></h1>
 
-  <% if @add_product_errors %>
-      <% @add_product_errors.each do |error,message| %>
-        <p><%= "#{error.capitalize} #{message.first}" %></p>
+  <% if @edit_product_errors %>
+      <% @edit_product_errors.each do |error| %>
+        <p class="errors"><%= error %></p>
       <% end %>
     <% end %>
 

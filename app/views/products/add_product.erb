@@ -1,9 +1,9 @@
 <div class="new-product-form">
   <h1 id="create-product-form">Add New Product</h1>
 
-  <% if @edit_product_errors %>
-    <% @edit_product_errors.each do |error, message| %>
-      <p><%= "#{error.capitalize} #{message.first}" %></p>
+  <% if @add_product_errors %>
+    <% @add_product_errors.each do |error| %>
+      <p class="errors"><%= error %></p>
     <% end %>
   <% end %>
 
@@ -20,7 +20,7 @@
     <br/>
 
     <label>Product Price:
-      <input type="text" name="price" placeholder="Add Product Price" value="">
+      <input type="number" min="0" step="0.01" name="price" placeholder="Add Product Price" value="">
     </label>
     <br/>
 

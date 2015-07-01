@@ -163,3 +163,10 @@ input {
   display: table;
   clear: both;
 }
+
+/* errors styling */
+.errors {
+  font-family: 'Archivo Narrow', sans-serif;
+  background-color: gray;
+  color: red;
+}

@@ -28,9 +28,8 @@ post '/categories/:category_id/products' do
 
   if new_product.save
     redirect "categories/#{new_product.category_id}/products/#{new_product.id}"
-
   else
-    @add_product_errors = new_product.errors.messages #not catching error
+    @add_product_errors = new_product.errors.full_messages
     erb :'/products/add_product', layout: false
   end
 end
@@ -62,7 +61,7 @@ put '/categories/:category_id/products/:id' do
     content_type :html
     erb :'/products/single_product', layout: false
   else
-    @edit_product_errors = update_product.errors.messages #not catching error
+    @edit_product_errors = update_product.errors.full_messages #not catching error
     erb :'/products/edit_product', layout: false
   end
 end
