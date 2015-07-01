@@ -16,13 +16,7 @@ post '/search' do
   find_category = Category.where(name: params[:search]).first
 
   if @product_results
-
-    p "*" * 25
-    p @product_results
-    p "*" * 25
-    
     erb :'/search/search_results'
-    # redirect "/categories/#{@product_results.category_id}/products/#{@product_results.id}"
   elsif find_category
     redirect "/categories/#{find_category.id}"
   else
