@@ -45,8 +45,8 @@ end
 # edit specific product =================================================
 
 get '/categories/:category_id/products/:id/edit' do
-  content_type :html
-  erb :'/products/edit_product', layout: false
+  content_type :json
+  (erb :'/products/edit_product', layout: false).to_json
 end
 
 put '/categories/:category_id/products/:id' do
@@ -58,8 +58,8 @@ put '/categories/:category_id/products/:id' do
                               }
 
   if update_product.save
-    content_type :html
-    erb :'/products/single_product', layout: false
+    content_type :json
+    (erb :'/products/single_product', layout: false).to_json
   else
     @edit_product_errors = update_product.errors.full_messages #not catching error
     erb :'/products/edit_product', layout: false

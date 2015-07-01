@@ -104,7 +104,8 @@
 
 			var request = $.ajax({
 				url: route,
-				type: method
+				type: method,
+				dataType: 'json'
 			})
 
 			request.done(function(response) {
@@ -129,6 +130,7 @@
 			var request = $.ajax({
 				url: route,
 				type: method,
+				dataType: 'json',
 				data: editProductData
 			})
 
