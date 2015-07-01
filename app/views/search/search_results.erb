@@ -1,0 +1,11 @@
+<h1>Search Results for "<%= @search %>"</h1>
+
+<% if @product_results %>
+	<ul>
+		<% @product_results.each do |product| %>
+			<li>
+				<a href=""><%= product.title %></a>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
