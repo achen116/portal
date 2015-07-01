@@ -166,30 +166,4 @@
 			})
 		})
 	}
-
-	var searchButtonListener = function() {
-		$('#search-button').on('submit', function(event) {
-			event.preventDefault();
-
-			var route = $(this).attr('action')
-			var method = $(this).attr('method')
-			var searchData = $(this).serialize()
-
-			var request = $.ajax({
-				url: route,
-				type: method,
-				data: searchData
-			})
-
-			request.done(function(response) {
-				console.log('SUCCESS', response)
-				debugger
-			})
-
-			request.fail(function(response) {
-				console.log('FAIL', response)
-			})
-		})
-
-	}
 })();
