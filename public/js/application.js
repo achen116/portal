@@ -10,6 +10,8 @@
 	  updateProductListener();
 
 	  singleCategoryListener();
+
+	  searchButtonListener();
 	});
 
 	var signInListener = function() {
@@ -164,5 +166,14 @@
 				console.log('FAIL', response)
 			})
 		})
+	}
+
+	var searchButtonListener = function() {
+		$('#search-button').on('submit', function(event) {
+			event.preventDefault();
+
+			
+		})
+
 	}
 })();
