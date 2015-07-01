@@ -62,10 +62,15 @@ input[type="submit"] {
   font-family: 'Archivo Narrow', sans-serif;;
 }
 
-/* search button styling */
+/* forms styling */
 form {
 	float: right;
 	margin-right: 5px;
+}
+
+/* search button styling */
+#search-button {
+  float: left;
 }
 
 /* categories styling */
