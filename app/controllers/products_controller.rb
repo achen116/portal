@@ -10,11 +10,11 @@ end
 get '/categories/:category_id/products/new' do
 
   if current_user
-    content_type :html
-    erb :'/products/add_product', layout: false
+    content_type :json
+    (erb :'/products/add_product', layout: false).to_json
   else
-    content_type :html
-    erb :'/sessions/sign_in', layout: false
+    content_type :json
+    (erb :'/sessions/sign_in', layout: false).to_json
   end
 end
 
