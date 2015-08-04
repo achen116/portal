@@ -34,9 +34,9 @@
         <%= erb :'/sessions/_signin_signout_button' %>
       <% end %>
     </div>
-    <!-- <h1 class="header">portal</h1> -->
+
     <div class="header">
-      <img src="https://drive.google.com/thumbnail?id=0By22zG_9S2SfWm1zYjdJQlJSd0k&authuser=0&v=1434876878660&sz=w1416-h596" alt="portal"/>
+      <img src="http://localhost:9393/imgs/portal.png" alt="portal"/>
     </div>
 
     <!-- navigation bar -->
@@ -53,6 +53,18 @@
 </header>
 
 <body>
+  <!-- facebook share script -->
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=ENV['FB_APP_ID']";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
   <div class="container">
   <%= yield %>
   </div>

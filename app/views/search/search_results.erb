@@ -1,0 +1,11 @@
+<h1>Search Results for "<%= @search %>"</h1>
+
+<table class="display-products">
+	<tr>
+		<% @product_results.each do |product| %>
+			<td id="<%= product.id %>" class="product-rows">
+				<a href="/categories/<%= product.category_id %>/products/<%= product.id %>"><%= product.title %></a>
+			</td>
+		<% end %>
+	</tr>
+</table>

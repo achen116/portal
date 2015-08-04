@@ -29,6 +29,17 @@ a.nav-bar:hover {
   color: #79CCA2;
 }
 
+a.cat-dropdown {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+
+}
+
+a.cat-dropdown:hover {
+  color: #FFC91D;
+}
+
 /* sessions styling */
 .user_buttons {
   margin-top: 10px;
@@ -44,6 +55,16 @@ input[type="submit"] {
   color: white;
 }
 
+/* facebook sessions styling */
+#fb-signin-button {
+  background-color: #4E69A2;
+}
+
+.facebook {
+  clear: both;
+  float: left;
+}
+
 /* body container styling */
 .container {
   width: 1000px;
@@ -52,10 +73,15 @@ input[type="submit"] {
   font-family: 'Archivo Narrow', sans-serif;;
 }
 
-/* search button styling */
+/* forms styling */
 form {
 	float: right;
 	margin-right: 5px;
+}
+
+/* search button styling */
+#search-button {
+  float: left;
 }
 
 /* categories styling */
@@ -146,4 +172,23 @@ input {
 /* sign in form styling */
 #form {
   float: left;
+}
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* errors styling */
+.errors-block {
+  margin-top: 25px;
+}
+
+.error {
+  width: 400px;
+  margin: 5px 175px 0px 175px;
+  padding: 5px 0px 5px 10px;
+  border-radius: 5px;
+  background-color: #EFEFEF;
 }

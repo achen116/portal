@@ -10,14 +10,12 @@ end
 # search for a product or category ======================================
 
 post '/search' do
-  find_product = Product.where(title: params[:search]).first
-  find_category = Category.where(name: params[:search]).first
+  @search = params[:search]
+  @product_results = Product.where('title || description ILIKE ?', "%#{@search}%")
 
-  if find_product
-    redirect "/categories/#{find_product.category_id}/products/#{find_product.id}"
-  elsif find_category
-    redirect "/categories/#{find_category.id}"
-  else
+  if @search == "" || @product_results.empty?
     erb :'/search/search_not_found'
+  elsif @product_results
+    erb :'/search/search_results'
   end
 end
