@@ -1,5 +1,7 @@
 # Portal
-Portal is an e-commerce marketplace, specifically for parents to buy, sell, and trade their kids' unused and/or outgrown items. Visit [https://passionproj-portal.herokuapp.com](https://passionproj-portal.herokuapp.com/) to browse products.
+Portal is an e-commerce marketplace, specifically for parents to buy, sell, and trade their kids' unused and/or outgrown items. Visit [https://passionproj-portal.herokuapp.com](https://passionproj-portal.herokuapp.com/) to browse the site and its sample products/categories.
+
+![portal](/images/portal.png)
 
 ## User Stories
 As a user, I can...
