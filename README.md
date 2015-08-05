@@ -7,7 +7,7 @@ As a user, I can...
 * View all product categories
 * View all products within the same category
 * View product details
-* Search for a specific category or product
+* Search for a specific product
 * Create an account through Portal or Facebook
 * Post a new product to a category
 * Edit my product details
@@ -24,6 +24,7 @@ As a user, I want to...
 * Bookmark products to save for later
 * View my conversation history with other sellers
 * Rate and leave feedback for seller transactions
+* Filter products by category, price, rating, etc.
 * See a map of products in my surrounding area
 * Add products to a shopping cart
 * Checkout my shopping cart and make a secure checkout online
@@ -35,6 +36,7 @@ As a user, I want to...
 * Re-build the app using a Rails framework
 * Implement an Atomic CSS architecture
 * Add additional OAuth sign-in options
+* Refactor product search feature by using RegEx (currently only accounts for exact matches)
 ```
 
 ## Resources
